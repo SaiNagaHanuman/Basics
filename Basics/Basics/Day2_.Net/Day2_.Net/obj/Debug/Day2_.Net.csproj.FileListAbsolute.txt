@@ -1,0 +1,7 @@
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\bin\Debug\Day2_.Net.exe.config
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\bin\Debug\Day2_.Net.exe
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\bin\Debug\Day2_.Net.pdb
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\obj\Debug\Day2_.Net.csproj.AssemblyReference.cache
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\obj\Debug\Day2_.Net.csproj.CoreCompileInputs.cache
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\obj\Debug\Day2_.Net.exe
+C:\Infinite.net\C Sharp\Basics\Basics\Day2_.Net\Day2_.Net\obj\Debug\Day2_.Net.pdb
