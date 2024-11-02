@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{820779A3-5AD6-44F8-851B-C9551F7BA048}</ProjectGuid>
+    <ProjectGuid>{89E6DC3D-EDA1-4985-B668-49487DB9EE9A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Day2_.Net</RootNamespace>
-    <AssemblyName>Day2_.Net</AssemblyName>
+    <RootNamespace>Task_2</RootNamespace>
+    <AssemblyName>Task-2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,10 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Day2_.Net.Program</StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
+    <StartupObject>Task_2.Program6</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2Program.cs" />
-    <Compile Include="1Program.cs" />
-    <Compile Include="3Program.cs" />
-    <Compile Include="4Program.cs" />
-    <Compile Include="5Program.cs" />
+    <Compile Include="Program1.cs" />
+    <Compile Include="program2.cs" />
+    <Compile Include="Program3.cs" />
+    <Compile Include="Program4.cs" />
+    <Compile Include="Program5.cs" />
+    <Compile Include="Program6.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
