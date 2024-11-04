@@ -4,3 +4,4 @@ C:\Infinite.net\C Sharp\Assignments\Task-2\Task-2\obj\Debug\Task-2.pdb
 C:\Infinite.net\C Sharp\Assignments\Task-2\Task-2\bin\Debug\Task-2.exe.config
 C:\Infinite.net\C Sharp\Assignments\Task-2\Task-2\bin\Debug\Task-2.exe
 C:\Infinite.net\C Sharp\Assignments\Task-2\Task-2\bin\Debug\Task-2.pdb
+C:\Infinite.net\C Sharp\Assignments\Task-2\Task-2\obj\Debug\Assignment_2.csproj.AssemblyReference.cache

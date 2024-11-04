@@ -18,9 +18,9 @@ namespace Task_2
                 array2[i] = array1[i];
             }
             Console.WriteLine("Elements of the array 2:");
-           for (int i =0; i < array2.Length; i++)
+            foreach (int element in array2)
             {
-                Console.Write(array2 + " ");
+                Console.Write(element + " ");
             }
             Console.ReadLine();
         }
