@@ -1,0 +1,7 @@
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\bin\Debug\C Sharp Assessment1.exe.config
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\bin\Debug\C Sharp Assessment1.exe
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\bin\Debug\C Sharp Assessment1.pdb
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\obj\Debug\C Sharp Assessment1.csproj.AssemblyReference.cache
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\obj\Debug\C Sharp Assessment1.csproj.CoreCompileInputs.cache
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\obj\Debug\C Sharp Assessment1.exe
+C:\Infinite.net\C Sharp\C Sharp Assessment\C Sharp Assessment1\C Sharp Assessment1\obj\Debug\C Sharp Assessment1.pdb

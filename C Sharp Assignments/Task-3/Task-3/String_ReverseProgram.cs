@@ -15,6 +15,7 @@ namespace Task_3
             string Input = Console.ReadLine();
 
             char[] charArray = Input.ToCharArray();
+
             Array.Reverse(charArray);
 
             string reversedWord = new string(charArray);

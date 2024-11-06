@@ -11,6 +11,7 @@ namespace Task_3
         static void Main(string[] args)
         {
             Console.Write("Enter a word: ");
+
             string Input = Console.ReadLine();
 
             int length = Input.Length;
