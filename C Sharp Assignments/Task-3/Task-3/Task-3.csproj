@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Task_3.Two_Words_SameorNotProgram</StartupObject>
+    <StartupObject>Task_3.Program1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inheritance_Accounts.cs" />
+    <Compile Include="Inheritance_SalesDetails.cs" />
+    <Compile Include="Inheritance_StudentMarks.cs" />
     <Compile Include="String_lengthProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="String_ReverseProgram.cs" />
