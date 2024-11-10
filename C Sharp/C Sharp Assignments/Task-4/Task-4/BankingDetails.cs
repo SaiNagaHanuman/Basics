@@ -6,96 +6,127 @@ using System.Threading.Tasks;
 
 namespace Task_4
 {
+    class InsuffientBalanceException : ApplicationException
+    {
+        public InsuffientBalanceException(string msg) : base(msg)
+        {
+
+        }
+    }
     class BankingDetails
     {
-       public int amount, balance;
-        public String transaction_type;
-        void Credit()
+        public int Accno, amount;
+        public float bal;
+        public string cust_name;
+        public string acc_type, transaction_type;
+        public BankingDetails(int Accno, String cust_name, String acc_type, String transaction_type, float bal)
         {
-            try
-            {
-                Console.WriteLine("Enter the money to be credited:");
-                amount = Convert.ToInt32(Console.ReadLine()); 
-                balance = balance + amount;
-                Console.WriteLine("The available balance is:" + balance);
-                Console.WriteLine("Transaction is completed:");
-            }
-            catch (FormatException e)   //The format Exception arrised this will trigger
-            {
-                Console.WriteLine("Please enter numbers:");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception occured:" + e.Message);
-            }
+            this.Accno = Accno;
+            this.cust_name = cust_name;
+            this.acc_type = acc_type;
+            this.transaction_type = transaction_type;
+            this.bal = bal;
         }
-        void Debit()
+        public void deposit(int n)
         {
-            try
+            if (n > 0)
             {
-                Console.WriteLine("Enter the money to be debit:");
-                amount = Convert.ToInt32(Console.ReadLine()); 
-                balance = balance - amount;  
-                if (balance > 0)
-                {
-                    Console.WriteLine("Successfully Debited the amount is:" + amount);
-                    Console.WriteLine("The available balance is:" + balance);
-                    Console.WriteLine("The transaction is completed:");
-                }
-            }
-            catch (FormatException f)  // The format exception will arrised this will trigger.
-            {
-                Console.WriteLine("Please Enter numbers:");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception occured:" + e.Message);
-            }
-
-        }
-
-        public void UpdateBalance()
-        {
-            String type = transaction_type.ToLower();
-
-            if (type == "debit")
-            {
-                Debit();
-            }
-            else if (type == "credit")
-            {
-                Credit();
+                bal += n;
+                Console.WriteLine("Amount is credited successfully");
             }
             else
             {
-                Console.WriteLine("Enter Debit or Credit:");
+                throw (new InsuffientBalanceException("Enter the amount greater than Zero"));
+            }
+
+        }
+        public void withdraw(int n)
+        {
+            if (n > 0 && n < bal)
+            {
+                bal -= n;
+                Console.WriteLine("Amount debited successfully");
+            }
+            else if (n > bal)
+            {
+                throw (new InsuffientBalanceException("Insufficient balance"));
             }
         }
+
+        public void balance(string transaction_type, int amount)
+        {
+            if (transaction_type == "d")
+            {
+                deposit(amount);
+            }
+            else
+            {
+                withdraw(amount);
+            }
+        }
+
+        public void showdata()
+        {
+            Console.WriteLine("Account number is   {0} ", Accno);
+            Console.WriteLine("Customer name is    {0} ", cust_name);
+            Console.WriteLine("Account Type is     {0} ", acc_type);
+            Console.WriteLine("Transaction Type is {0} ", transaction_type);
+            Console.WriteLine("Balance is          {0} ", bal);
+
+        }
+
     }
-    public class InsufficientBalanceException : ApplicationException
+    class Program
     {
-        public InsufficientBalanceException(String Transaction_type) : base(Transaction_type)
+        static void Main(string[] args)
         {
-        }
-        public static void Main(String[] args)
-        {
-            BankingDetails b = new BankingDetails();
-            Console.WriteLine("Enter the transaction type :: Debit or Credit");
-            b.transaction_type = Console.ReadLine();// Debit
-            b.UpdateBalance();
-            try
+            Console.WriteLine("Enter the Account number");
+            int accno = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Customer Name");
+
+            string cust_name = Console.ReadLine();
+
+            Console.WriteLine("Enter the Account Type(current/savings)");
+            string acc_type = Console.ReadLine();
+            Console.WriteLine("Enter  the Transaction Type (D/W)");
+            string Transaction_type = Console.ReadLine();
+            Console.WriteLine("Enter the Amount");
+            int amount = Convert.ToInt32(Console.ReadLine());
+
+            BankingDetails a = new BankingDetails(accno, cust_name, acc_type, Transaction_type, amount);
+
+            a.showdata();
+            while (true)
             {
-                if (b.balance < 0)
+                Console.WriteLine("Enter Transaction Type(D/W)");
+                string t_t = Console.ReadLine();
+                if (t_t == "q")
                 {
-                    throw new InsufficientBalanceException("An Exception as occured:");
+                    break;
                 }
+                else
+                {
+                    Console.WriteLine("Enter Amount");
+                    int amt = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        a.balance(t_t, amt);
+                    }
+                    catch (InsuffientBalanceException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                    catch (Exception e1)
+                    {
+                        Console.WriteLine(e1.Message);
+                    }
+                }
+                a.showdata();
+
+
             }
-            catch (InsufficientBalanceException e)
-            {
-                Console.WriteLine("Inssufficient Balance:");
-            }
-            Console.Read();
+            Console.ReadLine();
+
         }
     }
 }
-

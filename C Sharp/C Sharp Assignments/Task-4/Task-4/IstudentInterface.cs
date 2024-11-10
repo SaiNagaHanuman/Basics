@@ -87,7 +87,7 @@ namespace Task_4
             {
 
                 Resident r = new Resident();
-                Console.WriteLine("Enter the studentId of Resident class");
+                Console.WriteLine("Enter the ID of student in Resident class");
                 r.Line = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the student name of Resident class:");
                 r.student = (Console.ReadLine());

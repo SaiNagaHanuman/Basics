@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Task_4.IstudentInterface.Resident</StartupObject>
+    <StartupObject>Task_4.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
