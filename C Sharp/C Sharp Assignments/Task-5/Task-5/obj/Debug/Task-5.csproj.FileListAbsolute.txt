@@ -1,0 +1,7 @@
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\bin\Debug\Task-5.exe.config
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\bin\Debug\Task-5.exe
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\bin\Debug\Task-5.pdb
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\obj\Debug\Task-5.csproj.AssemblyReference.cache
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\obj\Debug\Task-5.csproj.CoreCompileInputs.cache
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\obj\Debug\Task-5.exe
+C:\Infinite.net\C Sharp\C Sharp Assignments\Task-5\Task-5\obj\Debug\Task-5.pdb

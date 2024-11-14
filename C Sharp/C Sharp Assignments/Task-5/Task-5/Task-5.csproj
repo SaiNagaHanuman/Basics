@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{077DC493-BFE9-46C8-B192-F9F9D09592BE}</ProjectGuid>
+    <ProjectGuid>{2146A457-8ABA-4A19-BDF4-45779EDEBCD8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Assessment2</RootNamespace>
-    <AssemblyName>Assessment2</AssemblyName>
+    <RootNamespace>Task_5</RootNamespace>
+    <AssemblyName>Task-5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Assessment2.Student_Grades</StartupObject>
+    <StartupObject>Task_5.Countof_Lines</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,11 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exception_NegativeNoS.cs" />
-    <Compile Include="Product_Price.cs" />
+    <Compile Include="Book_Author.cs" />
+    <Compile Include="Countof_Lines.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student_Grades.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
