@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{077DC493-BFE9-46C8-B192-F9F9D09592BE}</ProjectGuid>
+    <ProjectGuid>{9166B9A9-9898-4C42-9793-CD0C6CF34574}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Assessment2</RootNamespace>
-    <AssemblyName>Assessment2</AssemblyName>
+    <RootNamespace>Assessment3</RootNamespace>
+    <AssemblyName>Assessment3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Assessment2.Product_Price</StartupObject>
+    <StartupObject>Assessment3.Text_File</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exception_NegativeNoS.cs" />
-    <Compile Include="Product_Price.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Class_Box.cs" />
+    <Compile Include="CricketTeam_RCB.cs" />
+    <Compile Include="Calculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student_Grades.cs" />
+    <Compile Include="Text_File.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
