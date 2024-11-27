@@ -1,0 +1,7 @@
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\bin\Debug\CSharp_SQL.exe.config
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\bin\Debug\CSharp_SQL.exe
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\bin\Debug\CSharp_SQL.pdb
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\obj\Debug\CSharp_SQL.csproj.AssemblyReference.cache
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\obj\Debug\CSharp_SQL.csproj.CoreCompileInputs.cache
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\obj\Debug\CSharp_SQL.exe
+C:\Infinite.net\SQL\Assessments\CSharp_SQL\CSharp_SQL\obj\Debug\CSharp_SQL.pdb

@@ -100,7 +100,7 @@ select ename from EMP
 where Ename like 'A%' or  Ename like 'M%'
  
 --13 Compute yearly salary of SMITH. 
-select ename,sal,sal*12 as Smith_Annual_sal   
+select ename,sal,sal*12 as Smith_Annual_sal  
 from emp
 where ename='Smith'
  
@@ -112,3 +112,14 @@ where sal not between 1500 and 2850
 select mgr_id,count(*) as Emp_Count          
 from emp group by mgr_id
 having  count(*)>2
+
+--16 Increase the salary of the given employee id by 100/-, if the salary is < 1250
+select * from EMP
+create or alter proc sp_get(@empid int)
+as
+begin
+  select Empno,Ename,Sal,Sal+100 as 'Incremented Salary' from EMP
+  where Sal<1250 and Empno=@empid
+end
+
+sp_get 7369
