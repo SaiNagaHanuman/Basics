@@ -39,20 +39,28 @@ C_Name VARCHAR(30),
 Start_date DATE)
  
 
+ create table CalculateCourse
+(
+C_id Varchar(15),
+C_name Varchar(25),
+Start_date Date ,
+End_date Date,
+Fee int 
+)
+
 create or alter trigger tgrDisplay
-on CalculateCourse_duration
+on CalculateCourse
 for insert
 as
 begin
-insert into CalculateCourse_duration(CName,StartDate)
-select CName,StartDate from inserted
+insert into CalculateCourse(C_Name,Start_Date)
+select C_name,Start_date from inserted
 end
  
-INSERT INTO CalculateCourse_duration VALUES
+INSERT INTO CalculateCourse VALUES
 ('CA001','css','2020-10-12','2020-11-22',9000)
  
-SELECT * FROM T_CourseInfo
-
+SELECT * FROM CalculateCourse
 
 
 
@@ -74,3 +82,24 @@ drop procedure sp_productdetails;
 drop table ProductsDetails;
 
 select * from ProductsDetails;
+-----------------------------------------
+
+create table ProductsDetail(ProductId int, ProductName varchar(30), Price Float, DiscountedPrice Float);
+create procedure sp_productdetail
+@ProductId int,
+@ProductName varchar(30),
+@Price Float,
+@DiscountedPrice Float
+as
+Begin
+insert into ProductsDetail(ProductId, ProductName, Price, DiscountedPrice) values(@ProductId, @ProductName, @Price, @DiscountedPrice);
+end
+ 
+go
+drop procedure sp_productdetails;
+drop table ProductsDetail;
+ 
+select * from ProductsDetail;
+
+
+
