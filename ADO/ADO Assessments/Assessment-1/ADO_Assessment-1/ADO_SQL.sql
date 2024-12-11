@@ -28,6 +28,7 @@ create or alter function fn_CalculateCourse_duration(@start_date date,@end_date 
   return @duration
   end
  
+
   select dbo.fn_CalculateCourse_duration(Start_date,End_date) Course_durationdays
   from CalculateCourse_duration;
 
@@ -56,6 +57,7 @@ begin
 insert into CalculateCourse(C_Name,Start_Date)
 select C_name,Start_date from inserted
 end
+
  
 INSERT INTO CalculateCourse VALUES
 ('CA001','css','2020-10-12','2020-11-22',9000)
