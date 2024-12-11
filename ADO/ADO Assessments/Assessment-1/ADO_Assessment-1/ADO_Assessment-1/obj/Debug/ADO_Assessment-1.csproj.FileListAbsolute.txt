@@ -1,0 +1,7 @@
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\bin\Debug\ADO_Assessment-1.exe.config
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\bin\Debug\ADO_Assessment-1.exe
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\bin\Debug\ADO_Assessment-1.pdb
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\obj\Debug\ADO_Assessment-1.csproj.AssemblyReference.cache
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\obj\Debug\ADO_Assessment-1.csproj.CoreCompileInputs.cache
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\obj\Debug\ADO_Assessment-1.exe
+C:\Infinite.net\ADO\ADO Assessments\Assessment-1\ADO_Assessment-1\ADO_Assessment-1\obj\Debug\ADO_Assessment-1.pdb
