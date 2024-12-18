@@ -86,22 +86,7 @@ drop table ProductsDetails;
 select * from ProductsDetails;
 -----------------------------------------
 
-create table ProductsDetail(ProductId int, ProductName varchar(30), Price Float, DiscountedPrice Float);
-create procedure sp_productdetail
-@ProductId int,
-@ProductName varchar(30),
-@Price Float,
-@DiscountedPrice Float
-as
-Begin
-insert into ProductsDetail(ProductId, ProductName, Price, DiscountedPrice) values(@ProductId, @ProductName, @Price, @DiscountedPrice);
-end
- 
-go
-drop procedure sp_productdetails;
-drop table ProductsDetail;
- 
-select * from ProductsDetail;
+
 
 
 

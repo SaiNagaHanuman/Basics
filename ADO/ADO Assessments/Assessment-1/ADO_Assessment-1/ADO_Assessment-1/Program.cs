@@ -8,8 +8,8 @@ using System.Data.SqlClient;
 
 namespace ADO_Assessment_1   
 {
-      public class Program
-{
+  public class Program
+  {
     public static SqlConnection connection = null;
     public static SqlCommand cmd = null;
     public static IDataReader reader = null;
@@ -56,7 +56,7 @@ namespace ADO_Assessment_1
     }
     void select()
     {
-        connection = new SqlConnection("Data source = ICS-LT-D244D6GL; database = ADOAssesment; trusted_connection = true;");
+        connection = new SqlConnection("Data Source=ICS-LT-D244D6BX;Initial Catalog=ADO_Assessment; trusted_connection = true;");
         Console.WriteLine("Successfully connected:");
        
         connection.Open();
@@ -92,5 +92,5 @@ namespace ADO_Assessment_1
         p.select();
         Console.Read();
     }
-}
+  }
 }
