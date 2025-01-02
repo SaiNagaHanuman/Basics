@@ -8,7 +8,7 @@ create table users(
    userid int identity primary key,
    username varchar(20) unique,
    password varchar(20),
-   role varchar(10)  check (role in ('user'))
+   role varchar(10) check (role in ('user'))
 );
 
 --Table Creation
@@ -57,11 +57,7 @@ Create table Bookings (
 	  @Destination varchar(25)
   as
   begin
-   if not exists (select 1 from Trains where TrainNo = @TrainNo and isactive = 1)
-   begin
-       raiserror ('Invalid Train  Number or Train is not Active', 8,1);
-	   return;
-   end
+  
 	insert into Trains(TrainNo, TrainName, FirstClassTotalBerths, SecondClassTotalBerths, SleeperClassTotalBerths, FirstClassAvailableBerths, SecondClassAvailableBerths, SleeperClassAvailableBerths, Source, Destination, Isactive)
 	values (@TrainNo, @TrainName, @FirstClassTotalBerths, @SecondClassTotalBerths, @SleeperClassTotalBerths, @FirstClassAvailableBerths, @SecondClassAvailableBerths, @SleeperClassAvailableBerths, @Source, @Destination, 1);
  end
@@ -114,7 +110,9 @@ Create or alter proc BookTickets
    @Tickets int
 as
 begin
-   if @Class ='FirstClass'
+ if exists (select * from Trains where TrainNo = @TrainNo and isactive =1)
+	begin
+	if @Class ='FirstClass'
    begin
        update Trains
 	   set FirstClassAvailableBerths = FirstClassAvailableBerths - @Tickets
@@ -165,6 +163,7 @@ begin
 	begin
 	    raiserror ('Invalid Class Provided by the User',8,1);
     end
+   end;
 end
 
 --Cancel tickets

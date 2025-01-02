@@ -14,11 +14,12 @@ namespace MiniProject_Train_Ticket_Bookings
                     "Integrated Security=true;");
         static void Main(string[] args)
         {
+            Console.WriteLine("\n*****************-----------Train Ticket Bookings----------------*****************");
             while (true)
             {
-                Console.WriteLine("\nTrain Ticket Bookings");
-                Console.WriteLine("1. Signup");
-                Console.WriteLine("2. Login");
+                Console.WriteLine();
+                Console.WriteLine("1. Signup For User");
+                Console.WriteLine("2. Login For User");
                 Console.WriteLine("3. Admin");
                 Console.WriteLine("4. Exit");
                 Console.Write("Enter your option: ");
@@ -47,6 +48,7 @@ namespace MiniProject_Train_Ticket_Bookings
 
         static void Signup()
         {
+            Console.WriteLine();
             Console.Write("Enter Username: ");
             string username = Console.ReadLine();
             Console.Write("Enter Password: ");
@@ -59,7 +61,7 @@ namespace MiniProject_Train_Ticket_Bookings
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Password", password);
                 cmd.ExecuteNonQuery();
-                Console.WriteLine("Signup successful!");
+                Console.WriteLine("Signup successful as User!");
             }
         }
 
@@ -67,6 +69,7 @@ namespace MiniProject_Train_Ticket_Bookings
 
         static void Login()
         {
+            Console.WriteLine();
             Console.Write("Enter Username: ");
             string username = Console.ReadLine();
             Console.Write("Enter User Password: ");
@@ -98,6 +101,7 @@ namespace MiniProject_Train_Ticket_Bookings
             while (true)
             {
                 Console.WriteLine("\n------Admin Menu------");
+                Console.WriteLine();
                 Console.WriteLine("1. Add Train");
                 Console.WriteLine("2. Modify Train");
                 Console.WriteLine("3. Delete Train (Soft Delete)");
@@ -157,19 +161,9 @@ namespace MiniProject_Train_Ticket_Bookings
                 cmd.Parameters.AddWithValue("@Source", source);
                 cmd.Parameters.AddWithValue("@Destination", destination);
                 conn.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Train added successfully.");
-                }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine($"Error:{ex.Message}");
-                }
-                finally
-                {
-                    conn.Close();
-                }               
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                Console.WriteLine("Train added successfully.");
             }
         }
 
@@ -226,7 +220,7 @@ namespace MiniProject_Train_Ticket_Bookings
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                Console.WriteLine("Train deleted (soft delete) successfully.");
+                Console.WriteLine("Train deleted successfully.");
             }
         }
 
@@ -237,6 +231,7 @@ namespace MiniProject_Train_Ticket_Bookings
             while (true)
             {
                 Console.WriteLine("\n=== User Menu ===");
+                Console.WriteLine();
                 Console.WriteLine("1. Book Tickets");
                 Console.WriteLine("2. Cancel Tickets");
                 Console.WriteLine("3. Show All Trains");
@@ -273,28 +268,55 @@ namespace MiniProject_Train_Ticket_Bookings
         {
             Console.Write("Enter Train Number: ");
             int trainNo = int.Parse(Console.ReadLine());
-            Console.Write("Enter Class (FirstClass/SecondClass/SleeperClass): ");
+            Console.Write("Enter Class (First/Second/Sleeper): ");
             string trainClass = Console.ReadLine();
             Console.Write("Enter Number of Tickets: ");
             int tickets = int.Parse(Console.ReadLine());
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("BookTickets", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TrainNo", trainNo);
-                cmd.Parameters.AddWithValue("@Class", trainClass);
-                cmd.Parameters.AddWithValue("@Tickets", tickets);
                 conn.Open();
-                try
+                bool isTrainActive = false;
+                using (SqlCommand checkCmd = new SqlCommand("SELECT IsActive FROM Trains WHERE TrainNo = @TrainNo", conn))
                 {
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Tickets booked successfully.");
+                    checkCmd.Parameters.AddWithValue("@TrainNo", trainNo);
+                    object result = checkCmd.ExecuteScalar();
+                    if (result != null && (bool)result)
+                    {
+                        isTrainActive = true;
+                    }
                 }
-                catch (SqlException ex)
+                if (!isTrainActive)
                 {
-                    Console.WriteLine($"Error: {ex.Message}");
+                    Console.WriteLine("Tickets not booked: The train is inactive or does not exist.");
+                    return;
                 }
-                conn.Close();
+                using (SqlCommand cmd = new SqlCommand("BookTickets", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TrainNo", trainNo);
+                    cmd.Parameters.AddWithValue("@Class", trainClass);
+                    cmd.Parameters.AddWithValue("@Tickets", tickets);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        Console.WriteLine("Tickets booked successfully.");
+                    }
+                    catch (SqlException ex)
+                    {
+                        if (ex.Message.Contains("Insufficient Berths"))
+                        {
+                            Console.WriteLine("Tickets not booked: " + ex.Message);
+                        }
+                        else if (ex.Message.Contains("Invalid Class Provided by the User"))
+                        {
+                            Console.WriteLine("Tickets not booked: Invalid class provided.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Error: {ex.Message}");
+                        }
+                    }
+                }
             }
         }
 
@@ -313,7 +335,7 @@ namespace MiniProject_Train_Ticket_Bookings
                         connection.Open();
                         using (SqlCommand cmd = new SqlCommand("CancelTickets", connection))
                         {
-                            cmd.CommandType = CommandType.StoredProcedure;                         
+                            cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@BookingID", bookingId);
 
                             int rowsAffected = cmd.ExecuteNonQuery();
@@ -347,12 +369,12 @@ namespace MiniProject_Train_Ticket_Bookings
             {
                 SqlCommand cmd = new SqlCommand("ShowAllTrains", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                conn.Open();
+                conn.Open();        
                 SqlDataReader reader = cmd.ExecuteReader();
                 Console.WriteLine("\nTrainNo\tTrainName\tFirstClass\tSecondClass\tSleeperClass\tSource\tDestination\tIsActive");
                 while (reader.Read())
                 {
-                    Console.WriteLine($"{reader["TrainNo"]}\t{reader["TrainName"]}\t{reader["FirstClassAvailableBerths"]}\t{reader["SecondClassAvailableBerths"]}\t{reader["sleeperClassAvailableBerths"]}\t{reader["Source"]}\t{reader["Destination"]}\t{(reader["isactive"].ToString() == "1" ? "Yes" : "No")}");
+                    Console.WriteLine($"{reader["TrainNo"]}\t{reader["TrainName"]}\t{reader["FirstClassAvailableBerths"]}\t{reader["SecondClassAvailableBerths"]}\t{reader["sleeperClassAvailableBerths"]}\t{reader["Source"]}\t{reader["Destination"]}\t{(reader["isactive"])}");
                 }
                 conn.Close();
             }
