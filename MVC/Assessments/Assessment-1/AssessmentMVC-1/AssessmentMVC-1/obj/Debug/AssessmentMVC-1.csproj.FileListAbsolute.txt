@@ -77,3 +77,9 @@ C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\obj
 C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\obj\Debug\AssessmentMVC-1.csproj.CopyComplete
 C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\obj\Debug\AssessmentMVC-1.dll
 C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\obj\Debug\AssessmentMVC-1.pdb
+C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\bin\EntityFramework.dll
+C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\bin\EntityFramework.SqlServer.dll
+C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\bin\EntityFramework.xml
+C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\bin\EntityFramework.SqlServer.xml
+C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\obj\Debug\AssessmentMVC_1.Migrations.MovieMigration.resources
+C:\Infinite.net\MVC\Assessments\Assessment-1\AssessmentMVC-1\AssessmentMVC-1\obj\Debug\AssessmentMVC-1.csproj.GenerateResource.cache

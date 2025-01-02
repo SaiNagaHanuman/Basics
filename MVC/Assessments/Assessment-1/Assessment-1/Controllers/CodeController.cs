@@ -19,20 +19,13 @@ namespace Assessment_1.Controllers
         }
 
         // Action 2: Return customer details with orderId == 10248
-        public ActionResult CustomerDetailsWithOrder()
+        public ActionResult CustomerOrder()
         {
             var customerDetails = db.Orders
-                .Where(order => order.OrderID == 10248)
-                .Select(order => new
-                {
-                    order.Customer.CustomerID,
-                    order.Customer.CompanyName,
-                    order.Customer.ContactName,
-                    order.Customer.Country,
-                    order.OrderDate
-                }).FirstOrDefault();
-
-            return View(customerDetails); // Pass data to View
+                                     .Where(o => o.OrderID == 10248)
+                                     .Select(o => o.Customer)
+                                     .FirstOrDefault();
+            return View(customerDetails);
         }
     }
 }
