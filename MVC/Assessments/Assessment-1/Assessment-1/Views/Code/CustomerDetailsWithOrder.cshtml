@@ -1,0 +1,24 @@
+﻿
+@model dynamic
+
+<h2>Customer Details with Order ID 10248</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Company Name</th>
+            <th>Contact Name</th>
+            <th>Country</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.CustomerID</td>
+            <td>@Model.CompanyName</td>
+            <td>@Model.ContactName</td>
+            <td>@Model.Country</td>
+            <td>@Model.OrderDate</td>
+        </tr>
+    </tbody>
+</table>
